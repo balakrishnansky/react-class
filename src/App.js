@@ -5,18 +5,23 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: "Balakrishnan",
-      age: 55,
-      loggenIn: false
+      count: 0
     };
+    this.hanldeClickEvent = this.hanldeClickEvent.bind(this);
   }
+  hanldeClickEvent() {
+    this.setState(prevState => {
+      return {
+        count: prevState.count + 3
+      };
+    });
+  }
+
   render() {
     return (
-      <div>
-        <h1>
-          your are now logged {this.state.loggenIn ? "IN" : "OUT"} as{" "}
-          {this.state.name}
-        </h1>
+      <div className="placeCenter">
+        <h1>{this.state.count} </h1>
+        <button onClick={this.hanldeClickEvent}>Click me</button>
       </div>
     );
   }
