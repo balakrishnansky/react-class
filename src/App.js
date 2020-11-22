@@ -7,7 +7,8 @@ class App extends Component {
     super();
     this.state = {
       name: "Balakrishnan Ramalingam",
-      age: "40"
+      age: "40",
+      country: "USA"
     };
   }
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
       <div>
         <h1>{this.state.name}</h1>
         <h3>{this.state.age}</h3>
+        <h3>{this.state.country}</h3>
       </div>
     );
   }
