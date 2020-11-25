@@ -2,9 +2,12 @@ import React from "react";
 
 const Header = props => {
   return (
-    <header>
-      <h2> Total Todo's {props.tasks.length}</h2>
-    </header>
+    <div className="card-header">
+      <h1 className="card-header-title header">
+        {" "}
+        Total Todo's {props.tasks.length}
+      </h1>
+    </div>
   );
 };
 

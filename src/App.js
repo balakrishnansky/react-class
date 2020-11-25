@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import Todo from "./components/Todo";
 import AddTodo from "./components/AddTodo";
 
+import "./style.css";
+
 class App extends Component {
   constructor() {
     super();
@@ -24,9 +26,12 @@ class App extends Component {
     // const {value} = e.target.value
     //this.setState({})
   }
-  onDelete(e) {
-    e.preventDefault();
-  }
+  onDelete = index => {
+    // event.preventDefault();
+    const newArr = [...this.state.tasks];
+    newArr.splice(index, 1);
+    this.setState({ tasks: newArr });
+  };
   handleOnchange(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
@@ -34,14 +39,16 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Header tasks={this.state.tasks} />
-        <Todo tasks={this.state.tasks} onDelete={this.onDelete} />
-        <AddTodo
-          onSubmitHandle={this.onSubmitHandle}
-          handleOnchange={this.handleOnchange}
-          term={this.state.term}
-        />
+      <div className="wrapper">
+        <div className="card frame">
+          <Header tasks={this.state.tasks} />
+          <Todo tasks={this.state.tasks} onDelete={this.onDelete} />
+          <AddTodo
+            onSubmitHandle={this.onSubmitHandle}
+            handleOnchange={this.handleOnchange}
+            term={this.state.term}
+          />
+        </div>
       </div>
     );
   }
