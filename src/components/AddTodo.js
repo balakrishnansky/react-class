@@ -3,11 +3,11 @@ import React, { Component } from "react";
 class AddTodo extends Component {
   render() {
     return (
-      <form onSubmit={this.props.onSubmitHandle}>
+      <form className="container my-3" onSubmit={this.props.onSubmitHandle}>
         <input
           type="text"
           name="term"
-          className="input"
+          className="input mt-3 pt-3"
           value={this.props.term}
           onChange={this.props.handleOnchange}
         />

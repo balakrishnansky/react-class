@@ -26,7 +26,7 @@ class App extends Component {
     // const {value} = e.target.value
     //this.setState({})
   }
-  onDelete = index => {
+  onDelete = (index) => {
     // event.preventDefault();
     const newArr = [...this.state.tasks];
     newArr.splice(index, 1);
@@ -39,7 +39,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="wrapper border mt-3 ">
         <div className="card frame">
           <Header tasks={this.state.tasks} />
           <Todo tasks={this.state.tasks} onDelete={this.onDelete} />
